@@ -11,14 +11,7 @@ class TestGen implements ITemplatable {
 	
 	public function generate() : string
 	{
-		$page = "
-		<head>
-			<title> Faktura </title>
-		</head>
-		<body>
-			{$this->data['test']}
-		</body>
-		";
+		$page = Engine::parseTemplate("templates/test.phtml", ['test' => "hello", 'stuff' => ["one", "two", "three"]]);
 		return $page;
 	}
 } 
